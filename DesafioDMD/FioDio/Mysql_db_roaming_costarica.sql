@@ -1,3 +1,6 @@
+
+CREATE DATABASE IF NOT EXISTS db_roaming_costarica DEFAULT CHARACTER SET latin1;
+USE db_roaming_costarica;
 -- phpMyAdmin SQL Dump
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
