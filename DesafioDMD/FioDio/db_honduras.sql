@@ -1,7 +1,7 @@
 
-create database db_roaming_honduras
+create database db_roaming_honduras_desafio
 GO
-USE db_roaming_honduras
+USE db_roaming_honduras_desafio
 
 create table tipo_clientes
 (
@@ -199,3 +199,19 @@ insert into facturacion (idcliente,monto_facturacion) values (23670,20.9);
 insert into cliente values (47693,1,'sv-mm47693','003104594','07022402530010','MEJIA ','MANUEL ANTONIO','m','62357596','f');
 insert into facturacion (idcliente,monto_facturacion) values (47693,144.9);
 GO
+
+
+use db_roaming_honduras_desafio
+go
+SELECT cli.idcliente,
+ cli.idtipocliente,
+cli.dui,
+cli.nit,cli.codigo_cliente,
+ cli.nombres, 
+cli.apellidos,
+ cli.numero_telefono, cli.sexo, cli.estado, fact.monto_facturacion, tipo.nombre_tipo 
+
+FROM cliente cli 
+
+inner join facturacion fact on cli.idcliente = fact.idcliente
+inner join tipo_clientes tipo on tipo.idtipocliente = cli.idtipocliente;
